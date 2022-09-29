@@ -12,4 +12,13 @@ function fibs(n) {
   return result;
 }
 
+//recursion ver. of Fibonacci
+function fibsRec(n) {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+  return fibsRec(n - 1).concat(fibsRec(n - 2)[n - 3] + fibsRec(n - 1)[n - 2]);
+}
+
 console.log(fibs(8));
+console.log(fibsRec(8));
